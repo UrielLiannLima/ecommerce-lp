@@ -103,7 +103,7 @@ class Estoque:
 #Exemplo de uso:
 estoque = Estoque()
 
-# Adicionar produtos ao estoque
+#Adicionar produtos ao estoque
 produto1 = Livros(1, "Uma Questão de Química", 31, MarcaProduto.Intriseca, "Isabelli Cristhini")
 produto2 = DVD(2, "A Era do Gelo", 10, MarcaProduto.SONY, "João Otávio")
 produto3 = Vinil(3, "Tequila", 69, MarcaProduto.Tarkett, "Uriel L.")
@@ -111,3 +111,27 @@ produto3 = Vinil(3, "Tequila", 69, MarcaProduto.Tarkett, "Uriel L.")
 estoque.adicionarProduto(produto1, 13)
 estoque.adicionarProduto(produto2, 22)
 estoque.adicionarProduto(produto3, 420)
+
+#Venda de produto
+try:
+    estoque.venderProduto(2, 3)
+    print("Venda realizada com sucesso.")
+except Exception as erro:
+    print(f"Erro ao vender: {erro}")
+
+#Devolução de produto
+try:
+    estoque.devolverProduto(2, 2)
+    print("Produto devolvido com sucesso.")
+except Exception as erro:
+    print(f"Erro ao devolver: {erro}")
+
+#Reestoque de produto
+try:
+    estoque.reabastecerProduto(1, 5)
+    print("Reabastecimento realizado com sucesso.")
+except Exception as erro:
+    print(f"Erro ao reabastecer: {erro}")
+
+#Mostrar o estado atual do estoque
+estoque.mostrarEstoque()
